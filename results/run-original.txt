@@ -1,0 +1,413 @@
+﻿Neural networks will run on: cuda
+
+========== H1N1-HA: 24 sequence pairs, 1701 nucleotides, 114 chunks ==========
+
+----- Copy previous season (baseline) -----
+Cross-validation R2 (2 folds): [-1.44138956e+27 -8.82938147e+26]
+Average R2: -116216385535419964927594463232.00 (+/- 27922570859579986170196525056.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -1.1779859782865975e+26
+  R2 score (variance weighted): -106.5803
+  Mean Absolute Error: 1.27e+14
+  Mean Squared Error: 2.478e+28
+  Nucleotide accuracy: 27.36%
+  Accuracy on mutated sites: 0.00% (9885 sites)
+
+----- Decision Tree -----
+Cross-validation R2 (2 folds): [-1.70107174e+22 -1.53110048e+09]
+Average R2: -850535867706270638145536.00 (+/- 850535867706117495717888.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -250627289989.896
+  R2 score (variance weighted): -0.5049
+  Mean Absolute Error: 9.157e+11
+  Mean Squared Error: 1.337e+26
+  Nucleotide accuracy: 94.65%
+  Accuracy on mutated sites: 94.66% (9885 sites)
+
+----- Random Forest -----
+Cross-validation R2 (2 folds): [-1.47034378e+22 -1.72782488e+09]
+Average R2: -735171891784169423896576.00 (+/- 735171891783996685680640.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -144356778769.2786
+  R2 score (variance weighted): -0.4945
+  Mean Absolute Error: 1.015e+12
+  Mean Squared Error: 1.327e+26
+  Nucleotide accuracy: 85.67%
+  Accuracy on mutated sites: 85.69% (9885 sites)
+
+----- Extra Trees -----
+Cross-validation R2 (2 folds): [-1.70107174e+22 -1.53110048e+09]
+Average R2: -850535867706270638145536.00 (+/- 850535867706117495717888.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -250627289989.0345
+  R2 score (variance weighted): -0.3029
+  Mean Absolute Error: 8.523e+11
+  Mean Squared Error: 1.16e+26
+  Nucleotide accuracy: 93.05%
+  Accuracy on mutated sites: 93.06% (9885 sites)
+
+----- Naive Bayes -----
+Cross-validation R2 (2 folds): [-1.13928269e+27 -4.62696982e+27]
+Average R2: -288312625311315961751233626112.00 (+/- 174384356674270644789395324928.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -2.5712187337590796e+26
+  R2 score (variance weighted): -121.4063
+  Mean Absolute Error: 1.207e+14
+  Mean Squared Error: 2.695e+28
+  Nucleotide accuracy: 39.21%
+  Accuracy on mutated sites: 38.32% (9885 sites)
+
+----- CNN (dilated residual) -----
+Cross-validation R2 (2 folds): [-8.06459964e+25 -2.36514243e+26]
+Average R2: -15858011988218102589155180544.00 (+/- 7793412352231294114207891456.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -1.0718689496461574e+20
+  R2 score (variance weighted): -1.0967
+  Mean Absolute Error: 2.009e+12
+  Mean Squared Error: 3.764e+26
+  Nucleotide accuracy: 98.38%
+  Accuracy on mutated sites: 98.07% (9885 sites)
+
+----- Transformer (codon tokens) -----
+Cross-validation R2 (2 folds): [-3.28823231e+25 -1.44729972e+16]
+Average R2: -1644116156577458108982362112.00 (+/- 1644116155130158308957093888.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: 0.5088
+  R2 score (variance weighted): -0.9998
+  Mean Absolute Error: 8.997e+11
+  Mean Squared Error: 1.755e+26
+  Nucleotide accuracy: 99.30%
+  Accuracy on mutated sites: 99.33% (9885 sites)
+
+----- BiLSTM (codon tokens) -----
+Cross-validation R2 (2 folds): [-3.14580693e+26 -1.98560192e+26]
+Average R2: -25657044265883882247558266880.00 (+/- 5801025058625680682591977472.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: 0.5176
+  R2 score (variance weighted): -0.0001
+  Mean Absolute Error: 4.611e+11
+  Mean Squared Error: 8.776e+25
+  Nucleotide accuracy: 99.32%
+  Accuracy on mutated sites: 99.36% (9885 sites)
+
+Model                                   CV R2    Test R2  R2 (vw)       MAE  NT acc %  Mut acc %  Time s
+--------------------------------------------------------------------------------------------------------
+Copy previous season (baseline)     -1.16e+27  -1.18e+26 -106.580  1.27e+14     27.36       0.00     0.0
+Decision Tree                       -8.51e+21  -2.51e+11   -0.505  9.16e+11     94.65      94.66     0.0
+Random Forest                       -7.35e+21  -1.44e+11   -0.494  1.01e+12     85.67      85.69     0.0
+Extra Trees                         -8.51e+21  -2.51e+11   -0.303  8.52e+11     93.05      93.06     0.0
+Naive Bayes                         -2.88e+27  -2.57e+26 -121.406  1.21e+14     39.21      38.32     0.0
+CNN (dilated residual)              -1.59e+26  -1.07e+20   -1.097  2.01e+12     98.38      98.07    30.6
+Transformer (codon tokens)          -1.64e+25   5.09e-01   -1.000  9.00e+11     99.30      99.33    35.5
+BiLSTM (codon tokens)               -2.57e+26   5.18e-01   -0.000  4.61e+11     99.32      99.36    13.7
+
+Saved results\h1n1-ha.csv
+
+========== H1N1-NA: 24 sequence pairs, 1410 nucleotides, 94 chunks ==========
+
+----- Copy previous season (baseline) -----
+Cross-validation R2 (2 folds): [-5.26250000e+00 -1.98026278e+25]
+Average R2: -990131390294246188461850624.00 (+/- 990131390294246188461850624.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -2.1886000272892963e+25
+  R2 score (variance weighted): -22.553
+  Mean Absolute Error: 1.184e+14
+  Mean Squared Error: 2.231e+28
+  Nucleotide accuracy: 24.48%
+  Accuracy on mutated sites: 0.00% (8519 sites)
+
+----- Decision Tree -----
+Cross-validation R2 (2 folds): [-5.95600000e-01 -3.09585394e+24]
+Average R2: -154792696913302347027841024.00 (+/- 154792696913302347027841024.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: 0.3424
+  R2 score (variance weighted): -0.3607
+  Mean Absolute Error: 1.238e+12
+  Mean Squared Error: 2.501e+26
+  Nucleotide accuracy: 99.01%
+  Accuracy on mutated sites: 99.12% (8519 sites)
+
+----- Random Forest -----
+Cross-validation R2 (2 folds): [-2.13700000e-01 -4.84877549e+23]
+Average R2: -24243877469311764241842176.00 (+/- 24243877469311764241842176.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -1.4055924134041937e+24
+  R2 score (variance weighted): -1.9714
+  Mean Absolute Error: 1.332e+13
+  Mean Squared Error: 1.284e+27
+  Nucleotide accuracy: 75.00%
+  Accuracy on mutated sites: 74.67% (8519 sites)
+
+----- Extra Trees -----
+Cross-validation R2 (2 folds): [-3.21900000e-01 -3.43983771e+23]
+Average R2: -17199188545921717305868288.00 (+/- 17199188545921717305868288.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -4.3678681047451856e+23
+  R2 score (variance weighted): -0.9602
+  Mean Absolute Error: 6.305e+12
+  Mean Squared Error: 5.65e+26
+  Nucleotide accuracy: 89.13%
+  Accuracy on mutated sites: 89.28% (8519 sites)
+
+----- Naive Bayes -----
+Cross-validation R2 (2 folds): [-1.58950000e+00 -3.27760584e+24]
+Average R2: -163880291802941825031864320.00 (+/- 163880291802941825031864320.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -4.1380568204847324e+24
+  R2 score (variance weighted): -5.0689
+  Mean Absolute Error: 1.284e+13
+  Mean Squared Error: 1.96e+27
+  Nucleotide accuracy: 92.16%
+  Accuracy on mutated sites: 91.31% (8519 sites)
+
+----- CNN (dilated residual) -----
+Cross-validation R2 (2 folds): [-1.81560000e+00 -2.25285934e+24]
+Average R2: -112642967056564272477765632.00 (+/- 112642967056564272477765632.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -2.3699702574635974e+24
+  R2 score (variance weighted): -3.8982
+  Mean Absolute Error: 1.766e+13
+  Mean Squared Error: 3.108e+27
+  Nucleotide accuracy: 89.00%
+  Accuracy on mutated sites: 88.02% (8519 sites)
+
+----- Transformer (codon tokens) -----
+Cross-validation R2 (2 folds): [-2.12670000e+00 -1.51149067e+22]
+Average R2: -755745333441272152588288.00 (+/- 755745333441272152588288.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -1.4455328295311412e+24
+  R2 score (variance weighted): -1.7565
+  Mean Absolute Error: 6.385e+12
+  Mean Squared Error: 9.494e+26
+  Nucleotide accuracy: 94.15%
+  Accuracy on mutated sites: 93.19% (8519 sites)
+
+----- BiLSTM (codon tokens) -----
+Cross-validation R2 (2 folds): [-1.26900000e-01 -2.40470525e+24]
+Average R2: -120235262314914010904920064.00 (+/- 120235262314914010904920064.00)
+Hold-out test (16 train / 8 test pairs):
+  R2 score: -2.6738877177216774e+24
+  R2 score (variance weighted): -2.7317
+  Mean Absolute Error: 1.242e+13
+  Mean Squared Error: 2.24e+27
+  Nucleotide accuracy: 91.74%
+  Accuracy on mutated sites: 89.88% (8519 sites)
+
+Model                                   CV R2    Test R2  R2 (vw)       MAE  NT acc %  Mut acc %  Time s
+--------------------------------------------------------------------------------------------------------
+Copy previous season (baseline)     -9.90e+24  -2.19e+25  -22.553  1.18e+14     24.48       0.00     0.0
+Decision Tree                       -1.55e+24   3.42e-01   -0.361  1.24e+12     99.01      99.12     0.0
+Random Forest                       -2.42e+23  -1.41e+24   -1.971  1.33e+13     75.00      74.67     0.0
+Extra Trees                         -1.72e+23  -4.37e+23   -0.960  6.30e+12     89.13      89.28     0.0
+Naive Bayes                         -1.64e+24  -4.14e+24   -5.069  1.28e+13     92.16      91.31     0.0
+CNN (dilated residual)              -1.13e+24  -2.37e+24   -3.898  1.77e+13     89.00      88.02    25.8
+Transformer (codon tokens)          -7.56e+21  -1.45e+24   -1.757  6.38e+12     94.15      93.19    28.0
+BiLSTM (codon tokens)               -1.20e+24  -2.67e+24   -2.732  1.24e+13     91.74      89.88    11.5
+
+Saved results\h1n1-na.csv
+
+========== H3N2-HA: 50 sequence pairs, 1737 nucleotides, 116 chunks ==========
+
+----- Copy previous season (baseline) -----
+Cross-validation R2 (2 folds): [-3.99106003e+15 -7.06478984e+17]
+Average R2: -35523502219912007680.00 (+/- 35124396217243942912.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -92362919490921.2
+  R2 score (variance weighted): -0.6913
+  Mean Absolute Error: 1.319e+12
+  Mean Squared Error: 2.605e+26
+  Nucleotide accuracy: 99.27%
+  Accuracy on mutated sites: 0.00% (188 sites)
+
+----- Decision Tree -----
+Cross-validation R2 (2 folds): [-1.87002961e+27 -4.26540201e+22]
+Average R2: -93503613086556467026978668544.00 (+/- 93499347684542370904897748992.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -1.1303245691238933e+22
+  R2 score (variance weighted): -0.1436
+  Mean Absolute Error: 1.43e+12
+  Mean Squared Error: 1.764e+26
+  Nucleotide accuracy: 84.89%
+  Accuracy on mutated sites: 20.21% (188 sites)
+
+----- Random Forest -----
+Cross-validation R2 (2 folds): [-1.78771979e+27 -4.69433910e+22]
+Average R2: -89388336813722694065936400384.00 (+/- 89383642474625332340072644608.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -1.5454433842161332e+22
+  R2 score (variance weighted): -0.1648
+  Mean Absolute Error: 1.409e+12
+  Mean Squared Error: 1.796e+26
+  Nucleotide accuracy: 82.23%
+  Accuracy on mutated sites: 17.55% (188 sites)
+
+----- Extra Trees -----
+Cross-validation R2 (2 folds): [-1.87002961e+27 -4.29034589e+22]
+Average R2: -93503625558492167024079273984.00 (+/- 93499335212606653315611099136.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -1.1303245691238933e+22
+  R2 score (variance weighted): -0.1436
+  Mean Absolute Error: 1.43e+12
+  Mean Squared Error: 1.764e+26
+  Nucleotide accuracy: 84.89%
+  Accuracy on mutated sites: 20.21% (188 sites)
+
+----- Naive Bayes -----
+Cross-validation R2 (2 folds): [-2.92538636e+29 -2.94300502e+28]
+Average R2: -16098434313115290787354236682240.00 (+/- 13155429292430652956586809491456.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -2.3979113635817613e+26
+  R2 score (variance weighted): -11.8923
+  Mean Absolute Error: 1.904e+13
+  Mean Squared Error: 3.298e+27
+  Nucleotide accuracy: 65.60%
+  Accuracy on mutated sites: 23.40% (188 sites)
+
+----- CNN (dilated residual) -----
+Cross-validation R2 (2 folds): [-3.99106003e+15 -7.06209591e+17]
+Average R2: -35510032529277485056.00 (+/- 35110926526768312320.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: 0.4562
+  R2 score (variance weighted): -0.8408
+  Mean Absolute Error: 1.408e+12
+  Mean Squared Error: 2.83e+26
+  Nucleotide accuracy: 99.31%
+  Accuracy on mutated sites: 7.98% (188 sites)
+
+----- Transformer (codon tokens) -----
+Cross-validation R2 (2 folds): [-3.99106003e+15 -7.06476290e+17]
+Average R2: -35523367522847461376.00 (+/- 35124261520338292736.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: 0.4539
+  R2 score (variance weighted): -0.8408
+  Mean Absolute Error: 1.41e+12
+  Mean Squared Error: 2.83e+26
+  Nucleotide accuracy: 99.31%
+  Accuracy on mutated sites: 7.45% (188 sites)
+
+----- BiLSTM (codon tokens) -----
+Cross-validation R2 (2 folds): [-3.99106003e+15 -7.06209591e+17]
+Average R2: -35510032529277485056.00 (+/- 35110926526768312320.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: 0.4562
+  R2 score (variance weighted): -0.8408
+  Mean Absolute Error: 1.408e+12
+  Mean Squared Error: 2.83e+26
+  Nucleotide accuracy: 99.31%
+  Accuracy on mutated sites: 7.98% (188 sites)
+
+Model                                   CV R2    Test R2  R2 (vw)       MAE  NT acc %  Mut acc %  Time s
+--------------------------------------------------------------------------------------------------------
+Copy previous season (baseline)     -3.55e+17  -9.24e+13   -0.691  1.32e+12     99.27       0.00     0.0
+Decision Tree                       -9.35e+26  -1.13e+22   -0.144  1.43e+12     84.89      20.21     0.0
+Random Forest                       -8.94e+26  -1.55e+22   -0.165  1.41e+12     82.23      17.55     0.0
+Extra Trees                         -9.35e+26  -1.13e+22   -0.144  1.43e+12     84.89      20.21     0.0
+Naive Bayes                         -1.61e+29  -2.40e+26  -11.892  1.90e+13     65.60      23.40     0.0
+CNN (dilated residual)              -3.55e+17   4.56e-01   -0.841  1.41e+12     99.31       7.98    68.5
+Transformer (codon tokens)          -3.55e+17   4.54e-01   -0.841  1.41e+12     99.31       7.45    88.8
+BiLSTM (codon tokens)               -3.55e+17   4.56e-01   -0.841  1.41e+12     99.31       7.98    33.8
+
+Saved results\h3n2-ha.csv
+
+========== H3N2-NA: 50 sequence pairs, 1443 nucleotides, 97 chunks ==========
+
+----- Copy previous season (baseline) -----
+Cross-validation R2 (2 folds): [-2.14776717e+12 -1.07383744e+04]
+Average R2: -107388358914901.73 (+/- 107388357841064.30)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: 0.4391
+  R2 score (variance weighted): -0.0723
+  Mean Absolute Error: 4.235e+11
+  Mean Squared Error: 9.074e+25
+  Nucleotide accuracy: 99.55%
+  Accuracy on mutated sites: 0.00% (96 sites)
+
+----- Decision Tree -----
+Cross-validation R2 (2 folds): [-6.70530199e+24 -4.29075984e+14]
+Average R2: -335265099576769359153987584.00 (+/- 335265099533861742513750016.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -6675321634322.143
+  R2 score (variance weighted): -0.0719
+  Mean Absolute Error: 3.502e+11
+  Mean Squared Error: 6.344e+25
+  Nucleotide accuracy: 85.40%
+  Accuracy on mutated sites: 16.67% (96 sites)
+
+----- Random Forest -----
+Cross-validation R2 (2 folds): [-8.31658806e+24 -3.24800682e+22]
+Average R2: -417453406635584715185192960.00 (+/- 414205399816746788483760128.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -2.087989187667132e+21
+  R2 score (variance weighted): -0.0728
+  Mean Absolute Error: 3.633e+11
+  Mean Squared Error: 6.354e+25
+  Nucleotide accuracy: 84.52%
+  Accuracy on mutated sites: 11.46% (96 sites)
+
+----- Extra Trees -----
+Cross-validation R2 (2 folds): [-6.70530199e+24 -4.29075984e+14]
+Average R2: -335265099576745307337129984.00 (+/- 335265099533837690696892416.00)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -6675321634322.143
+  R2 score (variance weighted): -0.0719
+  Mean Absolute Error: 3.502e+11
+  Mean Squared Error: 6.344e+25
+  Nucleotide accuracy: 85.40%
+  Accuracy on mutated sites: 16.67% (96 sites)
+
+----- Naive Bayes -----
+Cross-validation R2 (2 folds): [-11351929.859     -16055.7658]
+Average R2: -568399281.24 (+/- 566793704.66)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: -10419.6169
+  R2 score (variance weighted): -0.0734
+  Mean Absolute Error: 4.358e+11
+  Mean Squared Error: 9.136e+25
+  Nucleotide accuracy: 97.90%
+  Accuracy on mutated sites: 21.88% (96 sites)
+
+----- CNN (dilated residual) -----
+Cross-validation R2 (2 folds): [-8.44535594e+05  3.81200000e-01]
+Average R2: -42226760.66 (+/- 42226798.78)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: 0.5402
+  R2 score (variance weighted): -0.0722
+  Mean Absolute Error: 2.844e+11
+  Mean Squared Error: 6.325e+25
+  Nucleotide accuracy: 99.62%
+  Accuracy on mutated sites: 14.58% (96 sites)
+
+----- Transformer (codon tokens) -----
+Cross-validation R2 (2 folds): [-8.44535594e+05  1.34200000e-01]
+Average R2: -42226773.01 (+/- 42226786.43)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: 0.5367
+  R2 score (variance weighted): -0.0723
+  Mean Absolute Error: 2.858e+11
+  Mean Squared Error: 6.325e+25
+  Nucleotide accuracy: 99.61%
+  Accuracy on mutated sites: 11.46% (96 sites)
+
+----- BiLSTM (codon tokens) -----
+Cross-validation R2 (2 folds): [-8.44535584e+05  3.81200000e-01]
+Average R2: -42226760.15 (+/- 42226798.26)
+Hold-out test (35 train / 15 test pairs):
+  R2 score: 0.5402
+  R2 score (variance weighted): -0.0723
+  Mean Absolute Error: 2.858e+11
+  Mean Squared Error: 6.325e+25
+  Nucleotide accuracy: 99.61%
+  Accuracy on mutated sites: 12.50% (96 sites)
+
+Model                                   CV R2    Test R2  R2 (vw)       MAE  NT acc %  Mut acc %  Time s
+--------------------------------------------------------------------------------------------------------
+Copy previous season (baseline)     -1.07e+12   4.39e-01   -0.072  4.24e+11     99.55       0.00     0.0
+Decision Tree                       -3.35e+24  -6.68e+12   -0.072  3.50e+11     85.40      16.67     0.0
+Random Forest                       -4.17e+24  -2.09e+21   -0.073  3.63e+11     84.52      11.46     0.0
+Extra Trees                         -3.35e+24  -6.68e+12   -0.072  3.50e+11     85.40      16.67     0.0
+Naive Bayes                         -5.68e+06  -1.04e+04   -0.073  4.36e+11     97.90      21.88     0.0
+CNN (dilated residual)              -4.22e+05   5.40e-01   -0.072  2.84e+11     99.62      14.58    57.7
+Transformer (codon tokens)          -4.22e+05   5.37e-01   -0.072  2.86e+11     99.61      11.46    64.1
+BiLSTM (codon tokens)               -4.22e+05   5.40e-01   -0.072  2.86e+11     99.61      12.50    28.3
+
+Saved results\h3n2-na.csv

@@ -1,0 +1,221 @@
+﻿Neural networks will run on: cuda
+
+========== H1N1-HA (aligned): 24 sequence pairs, 1701 nucleotides, 114 chunks ==========
+  seed 0  Copy previous season (baseline)    nt  97.44%  mut   0.00%
+  seed 0  Decision Tree                      nt  94.54%  mut  66.40%
+  seed 0  Random Forest                      nt  86.93%  mut  55.06%
+  seed 0  Extra Trees                        nt  92.87%  mut  60.73%
+  seed 0  Naive Bayes                        nt  74.27%  mut  54.25%
+  seed 0  CNN (dilated residual)             nt  99.22%  mut  67.61%
+  seed 0  Transformer (codon tokens)         nt  99.29%  mut  63.97%
+  seed 0  BiLSTM (codon tokens)              nt  99.32%  mut  64.78%
+  seed 1  Copy previous season (baseline)    nt  97.44%  mut   0.00%
+  seed 1  Decision Tree                      nt  94.54%  mut  66.40%
+  seed 1  Random Forest                      nt  86.20%  mut  55.47%
+  seed 1  Extra Trees                        nt  92.87%  mut  60.73%
+  seed 1  Naive Bayes                        nt  74.27%  mut  54.25%
+  seed 1  CNN (dilated residual)             nt  99.24%  mut  69.23%
+  seed 1  Transformer (codon tokens)         nt  99.29%  mut  63.97%
+  seed 1  BiLSTM (codon tokens)              nt  99.31%  mut  64.78%
+  seed 2  Copy previous season (baseline)    nt  97.44%  mut   0.00%
+  seed 2  Decision Tree                      nt  94.54%  mut  66.40%
+  seed 2  Random Forest                      nt  85.99%  mut  51.42%
+  seed 2  Extra Trees                        nt  94.08%  mut  59.92%
+  seed 2  Naive Bayes                        nt  74.27%  mut  54.25%
+  seed 2  CNN (dilated residual)             nt  99.23%  mut  69.23%
+  seed 2  Transformer (codon tokens)         nt  99.29%  mut  63.97%
+  seed 2  BiLSTM (codon tokens)              nt  99.30%  mut  64.78%
+  seed 3  Copy previous season (baseline)    nt  97.44%  mut   0.00%
+  seed 3  Decision Tree                      nt  94.54%  mut  66.40%
+  seed 3  Random Forest                      nt  86.43%  mut  54.25%
+  seed 3  Extra Trees                        nt  94.08%  mut  59.92%
+  seed 3  Naive Bayes                        nt  74.27%  mut  54.25%
+  seed 3  CNN (dilated residual)             nt  99.24%  mut  68.42%
+  seed 3  Transformer (codon tokens)         nt  99.28%  mut  63.97%
+  seed 3  BiLSTM (codon tokens)              nt  99.30%  mut  64.78%
+  seed 4  Copy previous season (baseline)    nt  97.44%  mut   0.00%
+  seed 4  Decision Tree                      nt  94.54%  mut  66.40%
+  seed 4  Random Forest                      nt  86.93%  mut  57.49%
+  seed 4  Extra Trees                        nt  94.66%  mut  62.75%
+  seed 4  Naive Bayes                        nt  74.27%  mut  54.25%
+  seed 4  CNN (dilated residual)             nt  99.24%  mut  69.64%
+  seed 4  Transformer (codon tokens)         nt  99.32%  mut  63.97%
+  seed 4  BiLSTM (codon tokens)              nt  99.31%  mut  64.78%
+
+Model                              Seeds   NT acc % (mean +/- sd)   Mut acc % (mean +/- sd)  CV NT acc %
+--------------------------------------------------------------------------------------------------------
+Copy previous season (baseline)        5           97.44 +/- 0.00             0.00 +/- 0.00        95.23
+Decision Tree                          5           94.54 +/- 0.00            66.40 +/- 0.00        96.31
+Random Forest                          5           86.49 +/- 0.38            54.74 +/- 1.97        84.91
+Extra Trees                            5           93.72 +/- 0.72            60.81 +/- 1.04        93.26
+Naive Bayes                            5           74.27 +/- 0.00            54.25 +/- 0.00        74.57
+CNN (dilated residual)                 5           99.23 +/- 0.01            68.83 +/- 0.72        96.78
+Transformer (codon tokens)             5           99.29 +/- 0.01            63.97 +/- 0.00        96.96
+BiLSTM (codon tokens)                  5           99.31 +/- 0.01            64.78 +/- 0.00        96.86
+Saved results\h1n1-ha-aligned-seeds.csv
+Saved results\h1n1-ha-aligned-seeds-summary.csv
+
+========== H1N1-NA (aligned): 24 sequence pairs, 1410 nucleotides, 94 chunks ==========
+  seed 0  Copy previous season (baseline)    nt  98.18%  mut   0.00%
+  seed 0  Decision Tree                      nt  98.82%  mut  63.24%
+  seed 0  Random Forest                      nt  77.30%  mut  44.61%
+  seed 0  Extra Trees                        nt  94.22%  mut  49.51%
+  seed 0  Naive Bayes                        nt  94.04%  mut  63.73%
+  seed 0  CNN (dilated residual)             nt  96.83%  mut  61.76%
+  seed 0  Transformer (codon tokens)         nt  98.80%  mut  52.45%
+  seed 0  BiLSTM (codon tokens)              nt  98.48%  mut  52.45%
+  seed 1  Copy previous season (baseline)    nt  98.18%  mut   0.00%
+  seed 1  Decision Tree                      nt  96.01%  mut  57.35%
+  seed 1  Random Forest                      nt  83.03%  mut  46.57%
+  seed 1  Extra Trees                        nt  89.82%  mut  47.06%
+  seed 1  Naive Bayes                        nt  94.04%  mut  63.73%
+  seed 1  CNN (dilated residual)             nt  96.95%  mut  64.22%
+  seed 1  Transformer (codon tokens)         nt  98.87%  mut  51.96%
+  seed 1  BiLSTM (codon tokens)              nt  98.50%  mut  51.96%
+  seed 2  Copy previous season (baseline)    nt  98.18%  mut   0.00%
+  seed 2  Decision Tree                      nt  99.00%  mut  64.71%
+  seed 2  Random Forest                      nt  76.27%  mut  40.20%
+  seed 2  Extra Trees                        nt  90.09%  mut  49.02%
+  seed 2  Naive Bayes                        nt  94.04%  mut  63.73%
+  seed 2  CNN (dilated residual)             nt  96.84%  mut  63.24%
+  seed 2  Transformer (codon tokens)         nt  98.79%  mut  53.92%
+  seed 2  BiLSTM (codon tokens)              nt  98.56%  mut  53.92%
+  seed 3  Copy previous season (baseline)    nt  98.18%  mut   0.00%
+  seed 3  Decision Tree                      nt  98.82%  mut  63.24%
+  seed 3  Random Forest                      nt  82.58%  mut  43.63%
+  seed 3  Extra Trees                        nt  96.16%  mut  52.94%
+  seed 3  Naive Bayes                        nt  94.04%  mut  63.73%
+  seed 3  CNN (dilated residual)             nt  96.84%  mut  62.25%
+  seed 3  Transformer (codon tokens)         nt  98.88%  mut  52.94%
+  seed 3  BiLSTM (codon tokens)              nt  98.61%  mut  52.45%
+  seed 4  Copy previous season (baseline)    nt  98.18%  mut   0.00%
+  seed 4  Decision Tree                      nt  96.01%  mut  57.35%
+  seed 4  Random Forest                      nt  82.97%  mut  47.55%
+  seed 4  Extra Trees                        nt  89.75%  mut  46.57%
+  seed 4  Naive Bayes                        nt  94.04%  mut  63.73%
+  seed 4  CNN (dilated residual)             nt  96.96%  mut  63.24%
+  seed 4  Transformer (codon tokens)         nt  98.81%  mut  52.45%
+  seed 4  BiLSTM (codon tokens)              nt  98.60%  mut  53.43%
+
+Model                              Seeds   NT acc % (mean +/- sd)   Mut acc % (mean +/- sd)  CV NT acc %
+--------------------------------------------------------------------------------------------------------
+Copy previous season (baseline)        5           98.18 +/- 0.00             0.00 +/- 0.00        97.44
+Decision Tree                          5           97.73 +/- 1.41            61.18 +/- 3.17        95.93
+Random Forest                          5           80.43 +/- 3.00            44.51 +/- 2.56        76.62
+Extra Trees                            5           92.01 +/- 2.67            49.02 +/- 2.26        86.02
+Naive Bayes                            5           94.04 +/- 0.00            63.73 +/- 0.00        93.23
+CNN (dilated residual)                 5           96.89 +/- 0.06            62.94 +/- 0.85        97.14
+Transformer (codon tokens)             5           98.83 +/- 0.04            52.75 +/- 0.66        97.84
+BiLSTM (codon tokens)                  5           98.55 +/- 0.05            52.84 +/- 0.72        97.70
+Saved results\h1n1-na-aligned-seeds.csv
+Saved results\h1n1-na-aligned-seeds-summary.csv
+
+========== H3N2-HA (aligned): 50 sequence pairs, 1722 nucleotides, 115 chunks ==========
+  seed 0  Copy previous season (baseline)    nt  99.26%  mut   0.00%
+  seed 0  Decision Tree                      nt  83.40%  mut  24.47%
+  seed 0  Random Forest                      nt  81.30%  mut  18.09%
+  seed 0  Extra Trees                        nt  83.40%  mut  24.47%
+  seed 0  Naive Bayes                        nt  63.84%  mut  28.72%
+  seed 0  CNN (dilated residual)             nt  99.30%  mut   7.98%
+  seed 0  Transformer (codon tokens)         nt  99.30%  mut   7.45%
+  seed 0  BiLSTM (codon tokens)              nt  99.30%  mut   7.98%
+  seed 1  Copy previous season (baseline)    nt  99.26%  mut   0.00%
+  seed 1  Decision Tree                      nt  83.40%  mut  24.47%
+  seed 1  Random Forest                      nt  81.35%  mut  17.55%
+  seed 1  Extra Trees                        nt  83.40%  mut  24.47%
+  seed 1  Naive Bayes                        nt  63.84%  mut  28.72%
+  seed 1  CNN (dilated residual)             nt  99.30%  mut   7.98%
+  seed 1  Transformer (codon tokens)         nt  99.30%  mut   7.45%
+  seed 1  BiLSTM (codon tokens)              nt  99.30%  mut   7.98%
+  seed 2  Copy previous season (baseline)    nt  99.26%  mut   0.00%
+  seed 2  Decision Tree                      nt  83.40%  mut  24.47%
+  seed 2  Random Forest                      nt  80.07%  mut  20.74%
+  seed 2  Extra Trees                        nt  83.40%  mut  24.47%
+  seed 2  Naive Bayes                        nt  63.84%  mut  28.72%
+  seed 2  CNN (dilated residual)             nt  99.30%  mut   7.98%
+  seed 2  Transformer (codon tokens)         nt  99.30%  mut   7.45%
+  seed 2  BiLSTM (codon tokens)              nt  99.30%  mut   7.98%
+  seed 3  Copy previous season (baseline)    nt  99.26%  mut   0.00%
+  seed 3  Decision Tree                      nt  83.40%  mut  24.47%
+  seed 3  Random Forest                      nt  80.45%  mut  26.60%
+  seed 3  Extra Trees                        nt  83.40%  mut  24.47%
+  seed 3  Naive Bayes                        nt  63.84%  mut  28.72%
+  seed 3  CNN (dilated residual)             nt  99.30%  mut   7.98%
+  seed 3  Transformer (codon tokens)         nt  99.30%  mut   7.45%
+  seed 3  BiLSTM (codon tokens)              nt  99.30%  mut   7.98%
+  seed 4  Copy previous season (baseline)    nt  99.26%  mut   0.00%
+  seed 4  Decision Tree                      nt  83.40%  mut  24.47%
+  seed 4  Random Forest                      nt  80.11%  mut  17.55%
+  seed 4  Extra Trees                        nt  83.40%  mut  24.47%
+  seed 4  Naive Bayes                        nt  63.84%  mut  28.72%
+  seed 4  CNN (dilated residual)             nt  99.30%  mut   7.98%
+  seed 4  Transformer (codon tokens)         nt  99.30%  mut   7.45%
+  seed 4  BiLSTM (codon tokens)              nt  99.30%  mut   7.98%
+
+Model                              Seeds   NT acc % (mean +/- sd)   Mut acc % (mean +/- sd)  CV NT acc %
+--------------------------------------------------------------------------------------------------------
+Copy previous season (baseline)        5           99.26 +/- 0.00             0.00 +/- 0.00        99.35
+Decision Tree                          5           83.40 +/- 0.00            24.47 +/- 0.00        86.35
+Random Forest                          5           80.66 +/- 0.56            20.11 +/- 3.45        82.26
+Extra Trees                            5           83.40 +/- 0.00            24.47 +/- 0.00        85.71
+Naive Bayes                            5           63.84 +/- 0.00            28.72 +/- 0.00        62.42
+CNN (dilated residual)                 5           99.30 +/- 0.00             7.98 +/- 0.00        99.35
+Transformer (codon tokens)             5           99.30 +/- 0.00             7.45 +/- 0.00        99.33
+BiLSTM (codon tokens)                  5           99.30 +/- 0.00             7.98 +/- 0.00        99.34
+Saved results\h3n2-ha-aligned-seeds.csv
+Saved results\h3n2-ha-aligned-seeds-summary.csv
+
+========== H3N2-NA (aligned): 50 sequence pairs, 1437 nucleotides, 96 chunks ==========
+  seed 0  Copy previous season (baseline)    nt  99.55%  mut   0.00%
+  seed 0  Decision Tree                      nt  89.92%  mut  15.62%
+  seed 0  Random Forest                      nt  88.54%  mut  12.50%
+  seed 0  Extra Trees                        nt  89.92%  mut  15.62%
+  seed 0  Naive Bayes                        nt  96.73%  mut  12.50%
+  seed 0  CNN (dilated residual)             nt  99.61%  mut  13.54%
+  seed 0  Transformer (codon tokens)         nt  99.60%  mut  11.46%
+  seed 0  BiLSTM (codon tokens)              nt  99.61%  mut  12.50%
+  seed 1  Copy previous season (baseline)    nt  99.55%  mut   0.00%
+  seed 1  Decision Tree                      nt  89.92%  mut  15.62%
+  seed 1  Random Forest                      nt  88.20%  mut  12.50%
+  seed 1  Extra Trees                        nt  89.92%  mut  15.62%
+  seed 1  Naive Bayes                        nt  96.73%  mut  12.50%
+  seed 1  CNN (dilated residual)             nt  99.61%  mut  13.54%
+  seed 1  Transformer (codon tokens)         nt  99.61%  mut  13.54%
+  seed 1  BiLSTM (codon tokens)              nt  99.61%  mut  13.54%
+  seed 2  Copy previous season (baseline)    nt  99.55%  mut   0.00%
+  seed 2  Decision Tree                      nt  89.92%  mut  15.62%
+  seed 2  Random Forest                      nt  88.79%  mut  12.50%
+  seed 2  Extra Trees                        nt  89.92%  mut  15.62%
+  seed 2  Naive Bayes                        nt  96.73%  mut  12.50%
+  seed 2  CNN (dilated residual)             nt  99.61%  mut  13.54%
+  seed 2  Transformer (codon tokens)         nt  99.61%  mut  13.54%
+  seed 2  BiLSTM (codon tokens)              nt  99.61%  mut  12.50%
+  seed 3  Copy previous season (baseline)    nt  99.55%  mut   0.00%
+  seed 3  Decision Tree                      nt  89.92%  mut  15.62%
+  seed 3  Random Forest                      nt  89.19%  mut  10.42%
+  seed 3  Extra Trees                        nt  89.92%  mut  15.62%
+  seed 3  Naive Bayes                        nt  96.73%  mut  12.50%
+  seed 3  CNN (dilated residual)             nt  99.61%  mut  14.58%
+  seed 3  Transformer (codon tokens)         nt  99.60%  mut  11.46%
+  seed 3  BiLSTM (codon tokens)              nt  99.61%  mut  12.50%
+  seed 4  Copy previous season (baseline)    nt  99.55%  mut   0.00%
+  seed 4  Decision Tree                      nt  89.92%  mut  15.62%
+  seed 4  Random Forest                      nt  88.31%  mut  12.50%
+  seed 4  Extra Trees                        nt  89.92%  mut  15.62%
+  seed 4  Naive Bayes                        nt  96.73%  mut  12.50%
+  seed 4  CNN (dilated residual)             nt  99.61%  mut  13.54%
+  seed 4  Transformer (codon tokens)         nt  99.60%  mut  11.46%
+  seed 4  BiLSTM (codon tokens)              nt  99.61%  mut  12.50%
+
+Model                              Seeds   NT acc % (mean +/- sd)   Mut acc % (mean +/- sd)  CV NT acc %
+--------------------------------------------------------------------------------------------------------
+Copy previous season (baseline)        5           99.55 +/- 0.00             0.00 +/- 0.00        99.62
+Decision Tree                          5           89.92 +/- 0.00            15.62 +/- 0.00        85.28
+Random Forest                          5           88.60 +/- 0.35            12.08 +/- 0.83        84.18
+Extra Trees                            5           89.92 +/- 0.00            15.62 +/- 0.00        85.28
+Naive Bayes                            5           96.73 +/- 0.00            12.50 +/- 0.00        97.22
+CNN (dilated residual)                 5           99.61 +/- 0.00            13.75 +/- 0.42        99.56
+Transformer (codon tokens)             5           99.61 +/- 0.00            12.29 +/- 1.02        99.55
+BiLSTM (codon tokens)                  5           99.61 +/- 0.00            12.71 +/- 0.42        99.56
+Saved results\h3n2-na-aligned-seeds.csv
+Saved results\h3n2-na-aligned-seeds-summary.csv
